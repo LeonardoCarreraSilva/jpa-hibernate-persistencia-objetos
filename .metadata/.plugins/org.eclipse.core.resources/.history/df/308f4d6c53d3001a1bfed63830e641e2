@@ -1,0 +1,11 @@
+package br.com.alura.jpa.modelo;
+
+
+@Entity
+public class Conta {
+	private Long id;
+	private Integer agencia;
+    private Integer numero;
+    private String titular;
+
+}
