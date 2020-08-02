@@ -14,10 +14,10 @@ public class CriaContaSaldo {
 
 		Conta conta = new Conta();
 
-		conta.setTitular("Reinaldo Reis");
-		conta.setNumero(558);
-		conta.setAgencia(03);
-		conta.setSaldo(100.0);
+		conta.setTitular("Adriana Maria da Silva");
+		conta.setNumero(02);
+		conta.setAgencia(321654);
+		conta.setSaldo(600.0);
 
 		em.getTransaction().begin();
 
@@ -27,13 +27,13 @@ public class CriaContaSaldo {
 		em.close();
 		
 		
-		System.out.println("Id da conta do Reinaldo : " + conta.getId());
-		EntityManager em2 = emf.createEntityManager();
-		em2.getTransaction().begin();
-		conta.setSaldo(500.0);
-//		Faz uma conta no estado Detached de volta ao estade de Managed
-		em2.merge(conta);
-		em2.getTransaction().commit();
+// 		System.out.println("Id da conta do Leonardo : " + conta.getId());
+// 		EntityManager em2 = emf.createEntityManager();
+// 		em2.getTransaction().begin();
+// 		conta.setSaldo(10000.0);
+// //		Faz uma conta no estado Detached de volta ao estade de Managed
+// 		em2.merge(conta);
+// 		em2.getTransaction().commit();
 		
 	}
 }

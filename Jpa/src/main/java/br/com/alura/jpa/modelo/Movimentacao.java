@@ -23,7 +23,10 @@ public class Movimentacao {
 	private LocalDateTime data;
 	private String descricao;
 	private BigDecimal valor;
-
+	
+	@ManyToOne
+	private Conta conta;
+	
 	@ManyToMany
 	private List<Categoria> Categorias;
 
@@ -35,8 +38,6 @@ public class Movimentacao {
 		Categorias = categorias;
 	}
 
-	@ManyToOne
-	private Conta conta;
 
 	public Conta getConta() {
 		return conta;

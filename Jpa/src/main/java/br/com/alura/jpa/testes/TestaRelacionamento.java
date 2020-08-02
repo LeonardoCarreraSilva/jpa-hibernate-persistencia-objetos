@@ -21,19 +21,19 @@ public class TestaRelacionamento {
 		conta.setSaldo(300.0);
 		
 		
-		
-		Movimentacao movimentacao = new Movimentacao();
-		movimentacao.setData(LocalDateTime.now());
-		movimentacao.setDescricao("Churascaria");
-		movimentacao.setValor(new BigDecimal(130.0));
-		movimentacao.setTipoMovimentacao(TipoMovimentacao.ENTRADA);
-		movimentacao.setConta(conta);
-
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("contas");
 		EntityManager em = emf.createEntityManager();
 		
+		Movimentacao movimentacao = new Movimentacao();
+		movimentacao.setData(LocalDateTime.now());
+		movimentacao.setDescricao("Churrascaria");
+		movimentacao.setValor(new BigDecimal(250.0));
+		movimentacao.setTipoMovimentacao(TipoMovimentacao.SAIDA);
+		Conta contaDoLeonardo = em.find(Conta.class, 1L);
+		movimentacao.setConta(contaDoLeonardo);
+
 		em.getTransaction().begin();
-		em.persist(conta);
+		// em.persist(conta);
 		em.persist(movimentacao);
 		
 		em.getTransaction().commit();
